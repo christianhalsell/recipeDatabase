@@ -1,0 +1,104 @@
+/* CSS Document */
+
+html, body, form, img {margin:0; padding:0; border:0}
+html {font-size:100%}
+body {
+	font:.75em/1.4 verdana,arial,sans-serif;
+	background:#eee;
+	color:#000;
+}
+
+/* ---- universal properties ---- */
+p, ul, li, h1, h2, h3 {margin:0 10px 1em; padding:0}
+
+abbr, acronym {cursor:help}
+
+.clearfix:after {
+  visibility:hidden;
+  display:block;
+  font-size:0;
+  content:" ";
+  clear:both;
+  height:0;
+}
+
+.clearfix {display:inline-block}
+
+/* start commented backslash hack \*/
+* html .clearfix {height:1%}
+.clearfix {display:block}
+/* close commented backslash hack */
+
+/* ---- lists ---- */
+ul {margin-left:35px}
+li {margin-bottom:5px}
+ul li ul {margin-top:10px}
+
+/* ---- headings ---- */
+h1 {font-size:1.5em}
+h2 {font-size:1.3em}
+h3 {font-size:1.2em}
+
+
+/* ---- styles ---- */
+.bookContainer {
+	outline:1px solid #aaa;
+	width:350px;
+	height:130px;
+	background-color:#fff;
+	float:left;
+	margin:5px;
+}
+
+.bookContainer img {
+	float:left;
+	margin:10px;
+}
+
+.bookContainer ul {
+	list-style-type:none;
+	margin-bottom:0;
+}
+
+.bookContainer button {
+	float:right;
+	margin:10px;
+}
+
+#addBook label {
+	width:100px;
+	margin-right:10px;
+	text-align:right;
+	line-height:25px;
+}
+
+#addBook label, #addBook input {
+	display:block;
+	margin-bottom:10px;
+	float:left;
+}
+
+#addBook label[for="title"], #addBook label[for="releaseDate"] {
+	clear:both;
+}
+
+#addBook button {
+	display:block;
+	margin:5px 20px 10px 10px;
+	float:right;
+	clear:both;
+}
+
+#addBook div {
+	width:550px;
+}
+
+#addBook div:after {
+	content:"";
+	display:block;
+	height:0;
+	visibility:hidden;
+	clear:both;
+	font-size:0;
+	line-height:0;
+}
