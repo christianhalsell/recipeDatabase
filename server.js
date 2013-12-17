@@ -20,7 +20,7 @@ app.configure(function() {
 	app.use(app.router);
 
 	// Where to serve static content
-	app.use(express.static(path.join(application_root, 'site')));
+	app.use(express.static(path.join(application_root, '')));
 
 	// Show all errors in development
 	app.use(express.errorHandler({dumpExceptions: true, showStack: true}));
