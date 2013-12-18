@@ -29,9 +29,7 @@
 <script id="recipeTemplate" type="text/template">
 	<img src="<%= coverImage %>" />
 	<ul>
-		<li><%= id %></li>
-        <li><a href="/api/recipies/id:">Details</a></li>
-        <li><%= title %></li>
+		<li><%= title %></li>
 		<li><%= author %></li>
 		<li><%= $.format.date( new Date( releaseDate ), 'MMMM yyyy' ) %></li>
 		<li><% _.each(keywords, function(keyobj) {%> <%= keyobj.keyword %><% }); %></li>
