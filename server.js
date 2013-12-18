@@ -78,7 +78,7 @@ app.post('/api/recipies', function(request, response) {
 
 	recipe.save(function(err) {
 		if(!err) {
-			return console.log('created');
+			return console.log('recipe created');
 		} else {
 			return console.log(err);
 		}

@@ -41,10 +41,11 @@ app.CookbookView = Backbone.View.extend({
 			if($(el).val() != '') {
 				if(el.id === 'keywords') {
  					formData[el.id] = [];
-					_.each($(el).val().split(''), function (keyword) {
+					_.each($(el).val().split(' '), function (keyword) {
 						formData[el.id].push({'keyword': keyword});
 					});
-				} else if (el.id === 'releaseDate') {
+				} else 
+				if (el.id === 'releaseDate') {
 					formData[el.id] = $('#releaseDate').datepicker('getDate').getTime();
 				} else {
 					formData[el.id] = $(el).val();
