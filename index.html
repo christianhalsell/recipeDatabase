@@ -8,8 +8,8 @@
 </head>
 
 <body>
-<div id="books">
-	<form id="addBook" action="#">
+<div id="recipies">
+	<form id="addRecipe" action="#">
     	<div>
         	<label for="coverImage">Cover Image: </label><input id="coverImage" type="file" />
             
@@ -24,12 +24,14 @@
             <button id="add">Add</button>
         </div>
     </form>
-</div><!-- /books -->
+</div><!-- /recipies -->
 
-<script id="bookTemplate" type="text/template">
+<script id="recipeTemplate" type="text/template">
 	<img src="<%= coverImage %>" />
 	<ul>
-		<li><%= title %></li>
+		<li><%= id %></li>
+        <li><a href="/api/recipies/id:">Details</a></li>
+        <li><%= title %></li>
 		<li><%= author %></li>
 		<li><%= $.format.date( new Date( releaseDate ), 'MMMM yyyy' ) %></li>
 		<li><% _.each(keywords, function(keyobj) {%> <%= keyobj.keyword %><% }); %></li>

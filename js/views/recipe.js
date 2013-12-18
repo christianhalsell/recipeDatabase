@@ -1,9 +1,9 @@
 var app = app || {};
 
-app.BookView = Backbone.View.extend({
+app.RecipeView = Backbone.View.extend({
 	tagName: 'div',
-	className: 'bookContainer',
-	template: _.template($('#bookTemplate').html()),
+	className: 'recipeContainer',
+	template: _.template($('#recipeTemplate').html()),
 
 	render: function() {
 		//this.el is what we defined in tagName, use $el to get access to jQuery html() function
@@ -13,10 +13,10 @@ app.BookView = Backbone.View.extend({
 	},
 
 	events: {
-		'click .delete' : 'deleteBook'
+		'click .delete' : 'deleteRecipe'
 	},
 
-	deleteBook: function() {
+	deleteRecipe: function() {
 		// Delete model
 		this.model.destroy();
 

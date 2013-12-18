@@ -41,7 +41,7 @@ h3 {font-size:1.2em}
 
 
 /* ---- styles ---- */
-.bookContainer {
+.recipeContainer {
 	outline:1px solid #aaa;
 	width:350px;
 	height:130px;
@@ -50,50 +50,50 @@ h3 {font-size:1.2em}
 	margin:5px;
 }
 
-.bookContainer img {
+.recipeContainer img {
 	float:left;
 	margin:10px;
 }
 
-.bookContainer ul {
+.recipeContainer ul {
 	list-style-type:none;
 	margin-bottom:0;
 }
 
-.bookContainer button {
+.recipeContainer button {
 	float:right;
 	margin:10px;
 }
 
-#addBook label {
+#addRecipe label {
 	width:100px;
 	margin-right:10px;
 	text-align:right;
 	line-height:25px;
 }
 
-#addBook label, #addBook input {
+#addRecipe label, #addRecipe input {
 	display:block;
 	margin-bottom:10px;
 	float:left;
 }
 
-#addBook label[for="title"], #addBook label[for="releaseDate"] {
+#addRecipe label[for="title"], #addRecipe label[for="releaseDate"] {
 	clear:both;
 }
 
-#addBook button {
+#addRecipe button {
 	display:block;
 	margin:5px 20px 10px 10px;
 	float:right;
 	clear:both;
 }
 
-#addBook div {
+#addRecipe div {
 	width:550px;
 }
 
-#addBook div:after {
+#addRecipe div:after {
 	content:"";
 	display:block;
 	height:0;

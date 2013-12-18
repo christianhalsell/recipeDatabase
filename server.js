@@ -35,18 +35,18 @@ app.listen(port, function() {
 
 // Routes
 app.get('/api', function(request, response) {
-	response.send('Library API is running');
+	response.send('Cookbook API is running');
 });
 
 // Connect to database
-mongoose.connect('mongodb://localhost/library_database');
+mongoose.connect('mongodb://localhost/cookbook_database');
 
 // Schemas
 var Keywords = new mongoose.Schema({
 	keyword: String
 });
 
-var Book = new mongoose.Schema({
+var Recipe = new mongoose.Schema({
 	title: String,
 	author: String,
 	releaseDate: Date,
@@ -54,29 +54,29 @@ var Book = new mongoose.Schema({
 });
 
 // Models
-var BookModel = mongoose.model('Book', Book);
+var RecipeModel = mongoose.model('Recipe', Recipe);
 
-// Get a list of all books
-app.get('/api/books', function(request, response) {
-	return BookModel.find(function(err,books) {
+// Get a list of all recipies
+app.get('/api/recipies', function(request, response) {
+	return RecipeModel.find(function(err,recipies) {
 		if(!err) {
-			return response.send(books);
+			return response.send(recipies);
 		} else {
 			return console.log(err);
 		}
 	});
 });
 
-// Insert a new book
-app.post('/api/books', function(request, response) {
-	var book = new BookModel({
+// Insert a new recipe
+app.post('/api/recipies', function(request, response) {
+	var recipe = new RecipeModel({
 		title: request.body.title,
 		author: request.body.author,
 		releaseDate: request.body.releaseDate,
 		keywords: request.body.keywords
 	});
 
-	book.save(function(err) {
+	recipe.save(function(err) {
 		if(!err) {
 			return console.log('created');
 		} else {
@@ -84,48 +84,48 @@ app.post('/api/books', function(request, response) {
 		}
 	});
 
-	return response.send(book);
+	return response.send(recipe);
 });
 
-// Get a single book by id
-app.get( '/api/books/:id', function( request, response ) {
-	return BookModel.findById( request.params.id, function( err, book ) {
+// Get a single recipe by id
+app.get( '/api/recipies/:id', function( request, response ) {
+	return RecipeModel.findById( request.params.id, function( err, recipe ) {
 		if( !err ) {
-			return response.send( book );
+			return response.send( recipe );
 		} else {
 			return console.log( err );
 		}
 	});
 });
 
-// Update a book
-app.put('/api/books/:id', function(request, response) {
-	console.log('Updating book ' + request.body.title);
-	return BookModel.findById(request.params.id, function(err, book) {
-		book.title = request.body.title;
-		book.author = request.body.author;
-		book.releaseDate = request.body.releaseDate;
-		book.keywords = request.body.keywords;
+// Update a recipe
+app.put('/api/recipies/:id', function(request, response) {
+	console.log('Updating recipe ' + request.body.title);
+	return RecipeModel.findById(request.params.id, function(err, recipe) {
+		recipe.title = request.body.title;
+		recipe.author = request.body.author;
+		recipe.releaseDate = request.body.releaseDate;
+		recipe.keywords = request.body.keywords;
 
-		return book.save(function(err) {
+		return recipe.save(function(err) {
 			if(!err) {
-				console.log('book updated');
+				console.log('recipe updated');
 			} else {
 				console.log(err);
 			}
 
-			return response.send(book);
+			return response.send(recipe);
 		});
 	});
 });
 
-// Delete a book
-app.delete('/api/books/:id', function(request, response) {
-	console.log('Deleting book with id: ' + request.params.id);
-	return BookModel.findById(request.params.id, function(err, book) {
-		return book.remove(function(err) {
+// Delete a recipe
+app.delete('/api/recipies/:id', function(request, response) {
+	console.log('Deleting recipe with id: ' + request.params.id);
+	return RecipeModel.findById(request.params.id, function(err, recipe) {
+		return recipe.remove(function(err) {
 			if(!err) {
-				console.log('Book removed');
+				console.log('Recipe removed');
 				return response.send('');
 			} else {
 				console.log(err);
