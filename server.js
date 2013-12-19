@@ -58,7 +58,7 @@ var RecipeModel = mongoose.model('Recipe', Recipe);
 
 // Get a list of all recipies
 app.get('/api/recipies', function(request, response) {
-	return RecipeModel.find(function(err,recipies) {
+	return RecipeModel.find(function(err, recipies) {
 		if(!err) {
 			return response.send(recipies);
 		} else {
@@ -78,7 +78,7 @@ app.post('/api/recipies', function(request, response) {
 
 	recipe.save(function(err) {
 		if(!err) {
-			return console.log('recipe created');
+			return console.log('Recipe created');
 		} else {
 			return console.log(err);
 		}
@@ -109,7 +109,7 @@ app.put('/api/recipies/:id', function(request, response) {
 
 		return recipe.save(function(err) {
 			if(!err) {
-				console.log('recipe updated');
+				console.log('Recipe updated');
 			} else {
 				console.log(err);
 			}

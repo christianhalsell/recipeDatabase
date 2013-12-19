@@ -3,8 +3,8 @@
 html, body, form, img {margin:0; padding:0; border:0}
 html {font-size:100%}
 body {
-	font:.75em/1.4 verdana,arial,sans-serif;
-	background:#eee;
+	font:12px/1.4 verdana,arial,sans-serif;
+	background:#aaa;
 	color:#000;
 }
 
@@ -34,20 +34,81 @@ ul {margin-left:35px}
 li {margin-bottom:5px}
 ul li ul {margin-top:10px}
 
+ul li strong {font-size:14px;}
+
 /* ---- headings ---- */
-h1 {font-size:1.5em}
+h1 {
+	font-size:36px;
+	line-height:36px;
+	font-family:'PT Sans', sans-serif;
+	text-align:right;
+	color:#fff;
+}
+
 h2 {font-size:1.3em}
 h3 {font-size:1.2em}
 
+/* ---- containers ---- */
+#container {
+	margin:0 auto;
+	width:1000px;
+	padding:0 0 10px;
+}
+
+#header {
+	width:980px;
+	margin:0 10px;
+	padding-top:26px;
+	text-align:right;
+}
+
+#header h1 {margin:0}
+
+#inputArea {
+	width:980px;
+	margin:0 10px;
+}
+
+#inputArea h3 {
+	width:204px;
+	height:26px;
+	padding:11px 0 0 10px;
+	margin:0;
+	outline:0;
+	font:bold 14px/14px verdana,arial,sans-serif;
+	color:#4f6571;
+	text-shadow: 1px 1px #fff;
+	cursor:pointer;
+	background:url(/img/addRecipeTab.png) no-repeat 0 0;
+}
+
+#inputArea div {
+	padding:20px;
+	background:#333;
+	color:#fff;
+}
+
+#content {
+	width:960px;
+	margin:0 10px;
+	padding:20px 10px;
+	-webkit-box-shadow: 0 2px 10px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 2px 10px rgba(0,0,0,.5);
+	box-shadow: 0 2px 10px rgba(0,0,0,.5);
+	background:#fff;
+}
 
 /* ---- styles ---- */
 .recipeContainer {
-	outline:1px solid #aaa;
-	width:350px;
-	height:130px;
+	width:300px;
+	height:173px;
 	background-color:#fff;
 	float:left;
-	margin:5px;
+	margin:10px;
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 20px rgba(0,0,0,.5);
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+	background:url(/img/recipeContainer_bg.png) no-repeat 0 0;
 }
 
 .recipeContainer img {
@@ -73,7 +134,7 @@ h3 {font-size:1.2em}
 }
 
 #addRecipe label, #addRecipe input {
-	display:block;
+	display:inline-block;
 	margin-bottom:10px;
 	float:left;
 }
@@ -89,9 +150,7 @@ h3 {font-size:1.2em}
 	clear:both;
 }
 
-#addRecipe div {
-	width:550px;
-}
+#addRecipe div {}
 
 #addRecipe div:after {
 	content:"";

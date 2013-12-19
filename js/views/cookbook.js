@@ -1,7 +1,8 @@
 var app = app || {};
 
 app.CookbookView = Backbone.View.extend({
-	el: '#recipies',
+	//el: '#content', // CORRECT PLACE
+	el: '#recipies', // THIS NEEDS TO BE RECIPIES FOR DB TO WORK RIGHT
 
 	initialize: function() {
 		this.collection = new app.Cookbook();
