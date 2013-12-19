@@ -2,7 +2,6 @@ var app = app || {};
 
 app.Recipe = Backbone.Model.extend({
 	defaults: {
-		//coverImage: 'img/placeholder.png',
 		title: 'No title',		
 		keywords: 'None',
 		cookingTime: '',

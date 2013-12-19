@@ -13,8 +13,7 @@
     <script>
         $(function() {
             $( "#inputArea" ).accordion({
-                //collapsible: true,
-                collapsible: false, // keep false for testing purposes
+                collapsible: true,
                 active: false,
                 heightStyle: "content"
             });
@@ -34,7 +33,6 @@
             <form id="addRecipe" action="#">
                 <div>
                     <div id="inputItemsLeft" class="clearfix">
-                        <!--<label for="coverImage">Cover Image: </label><input id="coverImage" type="file">-->
                         <label for="title">Title: </label> <input id="title" type="text"><br>
 
                         <label for="keywords">Ingredients: </label> <input id="keywords" type="text"><br>
@@ -60,12 +58,12 @@
     <div id="content" class="clearfix">
         <script id="recipeTemplate" type="text/template">
             <ul>
-                <li><strong><%= title %></strong></li>
-                <li>Ingredients: <% _.each(keywords, function(keyobj) {%> <%= keyobj.keyword %><% }); %></li>
-                <li>Cooking Time: <%= cookingTime %></li>
-                <li>Posted by: <%= author %></li>
-                <li>Submitted on: <em><%= $.format.date( new Date( submittedOn ), 'MMM dd, yyyy' ) %></em></li>
-                <li>Instructions: <%= instructions %></li>
+                <li><span><strong><%= title %></strong></span></li>
+                <li><span>Ingredients:</span> <% _.each(keywords, function(keyobj) {%> <%= keyobj.keyword %><% }); %></li>
+                <li><span>Cooking Time:</span> <%= cookingTime %></li>
+                <li><span>Posted by:</span> <%= author %></li>
+                <li><span>Submitted on:</span> <em><%= $.format.date( new Date( submittedOn ), 'MMM dd, yyyy' ) %></em></li>
+                <li><span>Instructions:</span> <%= instructions %></li>
             </ul>
 
             <button class="delete">X</button>
