@@ -51,7 +51,8 @@ var Recipe = new mongoose.Schema({
 	keywords: [Keywords],
 	cookingTime: String,
 	author: String,
-	submittedOn: Date
+	submittedOn: Date,
+	instructions: String
 });
 
 // Models
@@ -75,7 +76,8 @@ app.post('/api/recipies', function(request, response) {
 		keywords: request.body.keywords,
 		cookingTime: request.body.cookingTime,
 		author: request.body.author,
-		submittedOn: request.body.submittedOn
+		submittedOn: request.body.submittedOn,
+		instructions: request.body.instructions
 	});
 
 	recipe.save(function(err) {
@@ -109,6 +111,7 @@ app.put('/api/recipies/:id', function(request, response) {
 		recipe.cookingTime = request.body.cookingTime;
 		recipe.author = request.body.author;
 		recipe.submittedOn = request.body.submittedOn;
+		recipe.instructions = request.body.instructions;
 
 		return recipe.save(function(err) {
 			if(!err) {

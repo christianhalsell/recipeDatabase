@@ -41,12 +41,14 @@
 
                         <label for="cookingTime">Cooking Time: </label> <input id="cookingTime" type="text"><br>
 
-                        <label for="author">Posted By: </label>  <input id="author" type="text"><br>
-
-                        <label for="submittedOn">Submitted On: </label> <input id="submittedOn" type="text"><br>                        
+                        <label for="author">Posted By: </label>  <input id="author" type="text"><br>                    
                     </div>
 
                     <div id="inputItemsRight" class="clearfix">
+
+                        <label for="submittedOn">Submitted On: </label> <input id="submittedOn" type="text"><br>
+
+                        <label for="instructions">Instructions: </label> <input id="instructions" type="text"><br>
 
                         <button id="add">Add</button>
                     </div>
@@ -63,6 +65,7 @@
                 <li>Cooking Time: <%= cookingTime %></li>
                 <li>Posted by: <%= author %></li>
                 <li>Submitted on: <em><%= $.format.date( new Date( submittedOn ), 'MMM dd, yyyy' ) %></em></li>
+                <li>Instructions: <%= instructions %></li>
             </ul>
 
             <button class="delete">X</button>

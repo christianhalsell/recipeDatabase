@@ -7,7 +7,8 @@ app.Recipe = Backbone.Model.extend({
 		keywords: 'None',
 		cookingTime: '',
 		author: 'Unknown',
-		submittedOn: 'Unknown'
+		submittedOn: 'Unknown',		
+		instructions: ''
 	},
 
 	parse: function(response) {

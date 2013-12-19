@@ -147,14 +147,8 @@ h3 {font-size:1.2em}
 	margin-bottom:0;
 }
 
-/*.recipeContainer button {
-	float:right;
-	margin:10px;
-}*/
-
 #inputItemsLeft {
 	width:400px;
-	padding-top:36px !important;
 	float:left;
 }
 
