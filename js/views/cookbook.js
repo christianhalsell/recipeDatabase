@@ -1,8 +1,7 @@
 var app = app || {};
 
 app.CookbookView = Backbone.View.extend({
-	//el: '#content', // CORRECT PLACE
-	el: '#recipies', // THIS NEEDS TO BE RECIPIES FOR DB TO WORK RIGHT
+	el: '#recipies',
 
 	initialize: function() {
 		this.collection = new app.Cookbook();
@@ -26,7 +25,8 @@ app.CookbookView = Backbone.View.extend({
 			model: item
 		});
 		
-		this.$el.append(recipeView.render().el);
+		//this.$el.append(recipeView.render().el);
+		$('#content').append(recipeView.render().el);
 	},
 
 	events: {
