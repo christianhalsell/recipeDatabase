@@ -25,7 +25,6 @@ app.CookbookView = Backbone.View.extend({
 			model: item
 		});
 		
-		//this.$el.append(recipeView.render().el);
 		$('#content').append(recipeView.render().el);
 	},
 
