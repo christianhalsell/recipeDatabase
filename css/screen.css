@@ -156,13 +156,11 @@ h3 {font-size:1.2em}
 	width:400px;
 	padding-top:36px !important;
 	float:left;
-	background:cyan !important;
 }
 
 #inputItemsRight {
 	width:400px;
 	float:right;
-	background:lime !important;
 }
 
 #addRecipe label {

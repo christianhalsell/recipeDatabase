@@ -37,16 +37,16 @@
                         <!--<label for="coverImage">Cover Image: </label><input id="coverImage" type="file">-->
                         <label for="title">Title: </label> <input id="title" type="text"><br>
 
-                        <label for="author">Author: </label>  <input id="author" type="text"><br>
+                        <label for="keywords">Ingredients: </label> <input id="keywords" type="text"><br>
 
-                        <label for="submittedOn">Submitted On: </label> <input id="submittedOn" type="text"><br>
+                        <label for="cookingTime">Cooking Time: </label> <input id="cookingTime" type="text"><br>
 
-                        <label for="keywords">Ingredients: </label> <input id="keywords" type="text">
+                        <label for="author">Posted By: </label>  <input id="author" type="text"><br>
+
+                        <label for="submittedOn">Submitted On: </label> <input id="submittedOn" type="text"><br>                        
                     </div>
 
                     <div id="inputItemsRight" class="clearfix">
-                        <lable for="instructions">Instructions: </label><br>
-                        <textarea id="instructions"></textarea><br>
 
                         <button id="add">Add</button>
                     </div>
@@ -57,14 +57,14 @@
 
     <div id="content" class="clearfix">
         <script id="recipeTemplate" type="text/template">
-            <!-- //<img src="<%= coverImage %>" /> -->
             <ul>
                 <li><strong><%= title %></strong></li>
+                <li>Ingredients: <% _.each(keywords, function(keyobj) {%> <%= keyobj.keyword %><% }); %></li>
+                <li>Cooking Time: <%= cookingTime %></li>
                 <li>Posted by: <%= author %></li>
                 <li>Submitted on: <em><%= $.format.date( new Date( submittedOn ), 'MMM dd, yyyy' ) %></em></li>
-                <li>Ingredients: <% _.each(keywords, function(keyobj) {%> <%= keyobj.keyword %><% }); %></li>
             </ul>
-            <!-- //<button class="delete">Delete</button> -->
+
             <button class="delete">X</button>
         </script>
     </div><!-- /content -->

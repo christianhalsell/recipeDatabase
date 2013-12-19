@@ -48,9 +48,10 @@ var Keywords = new mongoose.Schema({
 
 var Recipe = new mongoose.Schema({
 	title: String,
+	keywords: [Keywords],
+	cookingTime: String,
 	author: String,
-	submittedOn: Date,
-	keywords: [Keywords]
+	submittedOn: Date
 });
 
 // Models
@@ -71,9 +72,10 @@ app.get('/api/recipies', function(request, response) {
 app.post('/api/recipies', function(request, response) {
 	var recipe = new RecipeModel({
 		title: request.body.title,
+		keywords: request.body.keywords,
+		cookingTime: request.body.cookingTime,
 		author: request.body.author,
-		submittedOn: request.body.submittedOn,
-		keywords: request.body.keywords
+		submittedOn: request.body.submittedOn
 	});
 
 	recipe.save(function(err) {
@@ -103,9 +105,10 @@ app.put('/api/recipies/:id', function(request, response) {
 	console.log('Updating recipe ' + request.body.title);
 	return RecipeModel.findById(request.params.id, function(err, recipe) {
 		recipe.title = request.body.title;
+		recipe.keywords = request.body.keywords;
+		recipe.cookingTime = request.body.cookingTime;
 		recipe.author = request.body.author;
 		recipe.submittedOn = request.body.submittedOn;
-		recipe.keywords = request.body.keywords;
 
 		return recipe.save(function(err) {
 			if(!err) {
@@ -115,7 +118,7 @@ app.put('/api/recipies/:id', function(request, response) {
 			}
 
 			return response.send(recipe);
-		});
+		}); 
 	});
 });
 

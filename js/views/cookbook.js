@@ -44,8 +44,7 @@ app.CookbookView = Backbone.View.extend({
 					_.each($(el).val().split(' '), function (keyword) {
 						formData[el.id].push({'keyword': keyword});
 					});
-				} else 
-				if (el.id === 'submittedOn') {
+				} else if (el.id === 'submittedOn') {
 					formData[el.id] = $('#submittedOn').datepicker('getDate').getTime();
 				} else {
 					formData[el.id] = $(el).val();
