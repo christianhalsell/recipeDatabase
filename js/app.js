@@ -1,6 +1,6 @@
 var app = app || {};
 
 $(function() {
-	$('#releaseDate').datepicker();
+	$('#submittedOn').datepicker();
 	new app.CookbookView();
 });

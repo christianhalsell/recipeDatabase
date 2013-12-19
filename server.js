@@ -49,7 +49,7 @@ var Keywords = new mongoose.Schema({
 var Recipe = new mongoose.Schema({
 	title: String,
 	author: String,
-	releaseDate: Date,
+	submittedOn: Date,
 	keywords: [Keywords]
 });
 
@@ -72,7 +72,7 @@ app.post('/api/recipies', function(request, response) {
 	var recipe = new RecipeModel({
 		title: request.body.title,
 		author: request.body.author,
-		releaseDate: request.body.releaseDate,
+		submittedOn: request.body.submittedOn,
 		keywords: request.body.keywords
 	});
 
@@ -104,7 +104,7 @@ app.put('/api/recipies/:id', function(request, response) {
 	return RecipeModel.findById(request.params.id, function(err, recipe) {
 		recipe.title = request.body.title;
 		recipe.author = request.body.author;
-		recipe.releaseDate = request.body.releaseDate;
+		recipe.submittedOn = request.body.submittedOn;
 		recipe.keywords = request.body.keywords;
 
 		return recipe.save(function(err) {

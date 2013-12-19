@@ -6,14 +6,15 @@
 
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="css/screen.css" media="screen">
-    <link type="text/css" rel="stylesheet" href="xxxcss/jquery-ui-1.10.3.custom.min.css">
+    <link type="text/css" rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css">
 
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/jquery-ui-1.10.3.custom.min.js"></script>
     <script>
         $(function() {
             $( "#inputArea" ).accordion({
-                collapsible: true,
+                //collapsible: true,
+                collapsible: false, // keep false for testing purposes
                 active: false,
                 heightStyle: "content"
             });
@@ -32,17 +33,23 @@
         <div id="recipies" class="clearfix">
             <form id="addRecipe" action="#">
                 <div>
-                    <label for="coverImage">Cover Image: </label><input id="coverImage" type="file" />
-                    
-                    <label for="title">Title: </label><input id="title" type="text" />
-                    
-                    <label for="author">Author: </label><input id="author" type="text" />
-                    
-                    <label for="releaseDate">Release Date: </label><input id="releaseDate" type="text">
-                    
-                    <label for="keywords">Keywords: </label><input id="keywords" type="text">
-                    
-                    <button id="add">Add</button>
+                    <div id="inputItemsLeft" class="clearfix">
+                        <!--<label for="coverImage">Cover Image: </label><input id="coverImage" type="file">-->
+                        <label for="title">Title: </label> <input id="title" type="text"><br>
+
+                        <label for="author">Author: </label>  <input id="author" type="text"><br>
+
+                        <label for="submittedOn">Submitted On: </label> <input id="submittedOn" type="text"><br>
+
+                        <label for="keywords">Ingredients: </label> <input id="keywords" type="text">
+                    </div>
+
+                    <div id="inputItemsRight" class="clearfix">
+                        <lable for="instructions">Instructions: </label><br>
+                        <textarea id="instructions"></textarea><br>
+
+                        <button id="add">Add</button>
+                    </div>
                 </div>
             </form>
         </div><!-- /recipies -->
@@ -50,14 +57,15 @@
 
     <div id="content" class="clearfix">
         <script id="recipeTemplate" type="text/template">
-            <img src="<%= coverImage %>" />
+            <!-- //<img src="<%= coverImage %>" /> -->
             <ul>
                 <li><strong><%= title %></strong></li>
                 <li>Posted by: <%= author %></li>
-                <li><em><%= $.format.date( new Date( releaseDate ), 'MMMM dd, yyyy' ) %></em></li>
+                <li>Submitted on: <em><%= $.format.date( new Date( submittedOn ), 'MMM dd, yyyy' ) %></em></li>
                 <li>Ingredients: <% _.each(keywords, function(keyobj) {%> <%= keyobj.keyword %><% }); %></li>
             </ul>
-            <button class="delete">Delete</button>
+            <!-- //<button class="delete">Delete</button> -->
+            <button class="delete">X</button>
         </script>
     </div><!-- /content -->
 </div><!-- /container -->

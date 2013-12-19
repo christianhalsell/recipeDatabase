@@ -30,8 +30,8 @@ abbr, acronym {cursor:help}
 /* close commented backslash hack */
 
 /* ---- lists ---- */
-ul {margin-left:35px}
-li {margin-bottom:5px}
+ul {margin-left:5px; margin-top:7px;}
+li {margin-bottom:0px}
 ul li ul {margin-top:10px}
 
 ul li strong {font-size:14px;}
@@ -75,6 +75,8 @@ h3 {font-size:1.2em}
 	padding:11px 0 0 10px;
 	margin:0;
 	outline:0;
+	border:0;
+	border-radius:0;
 	font:bold 14px/14px verdana,arial,sans-serif;
 	color:#4f6571;
 	text-shadow: 1px 1px #fff;
@@ -82,11 +84,18 @@ h3 {font-size:1.2em}
 	background:url(/img/addRecipeTab.png) no-repeat 0 0;
 }
 
+#inputArea h3:hover {color:#000}
+
+.ui-state-active .ui-icon,
+.ui-icon, .ui-widget-content .ui-icon {background-image:none !important;}
+
 #inputArea div {
 	padding:20px;
 	background:#333;
 	color:#fff;
 }
+
+#recipies {border:0 !important; border-radius:0 !important}
 
 #content {
 	width:960px;
@@ -109,7 +118,24 @@ h3 {font-size:1.2em}
 	-moz-box-shadow: 0 0 20px rgba(0,0,0,.5);
 	box-shadow: 0 0 20px rgba(0,0,0,.5);
 	background:url(/img/recipeContainer_bg.png) no-repeat 0 0;
+	position:relative;	
 }
+
+.recipeContainer button.delete {
+	position:absolute;
+	right:3px;
+	top:3px;
+	border:0;
+	outline:0;
+	font-weight:bold;
+	font-size:10px;
+	line-height:16px;
+	color:#fff;
+	background-color:#c00;
+	cursor:pointer;
+}
+
+.recipeContainer button.delete:hover {background-color:#f00}
 
 .recipeContainer img {
 	float:left;
@@ -121,27 +147,41 @@ h3 {font-size:1.2em}
 	margin-bottom:0;
 }
 
-.recipeContainer button {
+/*.recipeContainer button {
 	float:right;
 	margin:10px;
+}*/
+
+#inputItemsLeft {
+	width:400px;
+	padding-top:36px !important;
+	float:left;
+	background:cyan !important;
+}
+
+#inputItemsRight {
+	width:400px;
+	float:right;
+	background:lime !important;
 }
 
 #addRecipe label {
 	width:100px;
 	margin-right:10px;
-	text-align:right;
-	line-height:25px;
+	text-align:left;
 }
 
 #addRecipe label, #addRecipe input {
 	display:inline-block;
 	margin-bottom:10px;
-	float:left;
 }
 
-#addRecipe label[for="title"], #addRecipe label[for="releaseDate"] {
+#addRecipe input {width:250px;}
+#addRecipe textarea {width:400px; height:160px;}
+
+/*#addRecipe label[for="title"], #addRecipe label[for="releaseDate"] {
 	clear:both;
-}
+}*/
 
 #addRecipe button {
 	display:block;
